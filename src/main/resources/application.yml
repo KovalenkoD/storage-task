@@ -1,0 +1,20 @@
+spring:
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/bookStore
+    password: postgres
+  application:
+    name: bookstore-api
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: 'true'
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    change-log: classpath:config/liquibase/master.xml
+
+jwt:
+  secret: book-store
+  expiration: '300000'
